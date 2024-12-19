@@ -30,6 +30,13 @@ return {
         "bash",
         "python",
         "java",
+        "go",
+        "haskell",
+        "javascript",
+        "typescript",
+        "elixir",
+        "rust",
+        "cpp",
       },
       incremental_selection = {
         enable = true,
@@ -41,5 +48,5 @@ return {
         },
       },
     })
-  end
+  end,
 }

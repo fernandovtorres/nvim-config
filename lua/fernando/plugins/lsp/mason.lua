@@ -30,6 +30,12 @@ return {
         "clangd",
         "ruff",
         "lua_ls",
+        "pyright",
+        "rust_analyzer",
+        "vhdl_ls",
+        "gopls",
+        "ts_ls",
+        "hls",
       },
     })
 
@@ -39,7 +45,6 @@ return {
         "stylua",
         "isort",
         "black",
-        "pylint",
         "cmakelint",
       },
     })

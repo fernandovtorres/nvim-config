@@ -27,3 +27,5 @@ opt.clipboard:append("unnamedplus")
 
 opt.splitright = true
 opt.splitbelow = true
+
+opt.conceallevel = 2

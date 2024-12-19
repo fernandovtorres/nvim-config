@@ -5,6 +5,7 @@ return {
     "hrsh7th/cmp-nvim-lsp",
     { "antosha417/nvim-lsp-file-operations", config = true },
     { "folke/neodev.nvim", opts = {} },
+    "williamboman/mason.nvim",
   },
   config = function()
     -- import lspconfig plugin
@@ -51,7 +52,7 @@ return {
         keymap.set("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", opts) -- show  diagnostics for file
 
         opts.desc = "Show line diagnostics"
-        keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts) -- show diagnostics for line
+        keymap.set("n", "<leader>dd", vim.diagnostic.open_float, opts) -- show diagnostics for line
 
         opts.desc = "Go to previous diagnostic"
         keymap.set("n", "[d", vim.diagnostic.goto_prev, opts) -- jump to previous diagnostic in buffer
@@ -86,21 +87,54 @@ return {
         })
       end,
       ["ruff"] = function()
-        -- configure ruff language server
         lspconfig["ruff"].setup({
           capabilities = capabilities,
           filetypes = { "python" },
         })
       end,
+      ["hls"] = function()
+        lspconfig["hls"].setup({
+          capabilities = capabilities,
+          filetypes = { "haskell", "lhaskell", "cabal" },
+        })
+      end,
+      ["ts_ls"] = function()
+        lspconfig["ts_ls"].setup({
+          capabilities = capabilities,
+          filetypes = { "typescript", "javascript" },
+        })
+      end,
+      ["vhdl_ls"] = function()
+        lspconfig["vhdl_ls"].setup({
+          capabilities = capabilities,
+          filetypes = { "vhd", "vhdl" },
+        })
+      end,
+      ["pyright"] = function()
+        lspconfig["pyright"].setup({
+          capabilities = capabilities,
+          filetypes = { "python" },
+        })
+      end,
       ["clangd"] = function()
-        -- configure emmet language server
         lspconfig["clangd"].setup({
           capabilities = capabilities,
           filetypes = { "c", "cpp" },
         })
       end,
+      ["marksman"] = function()
+        lspconfig["marksman"].setup({
+          capabilities = capabilities,
+          filetypes = { "markdown", "markdown.mdx" },
+        })
+      end,
+      ["gopls"] = function()
+        lspconfig["gopls"].setup({
+          capabilities = capabilities,
+          filetypes = { "go", "gomod", "gowork", "gotmpl" },
+        })
+      end,
       ["lua_ls"] = function()
-        -- configure lua server (with special settings)
         lspconfig["lua_ls"].setup({
           capabilities = capabilities,
           settings = {
