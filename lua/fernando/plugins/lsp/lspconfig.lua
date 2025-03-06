@@ -92,6 +92,12 @@ return {
           filetypes = { "python" },
         })
       end,
+      ["docker_compose_language_service"] = function()
+        lspconfig["docker_compose_language_service"].setup({
+          capabilities = capabilities,
+          filetypes = { "yaml.docker-compose" },
+        })
+      end,
       ["hls"] = function()
         lspconfig["hls"].setup({
           capabilities = capabilities,

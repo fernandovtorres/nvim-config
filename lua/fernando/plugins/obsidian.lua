@@ -26,5 +26,19 @@ return {
         path = "~/vaults/work",
       },
     },
+    note_id_func = function(title)
+      local suffix = ""
+      if title ~= nil then
+        suffix = title:gsub(" ", "-"):lower()
+      else
+        for _ = 1, 4 do
+          suffix = suffix .. string.char(math.random(65, 90))
+        end
+      end
+      return suffix .. "-" .. tostring(os.time())
+    end,
+    follow_url_func = function(url)
+      vim.fn.jobstart({ "xdg-open", url })
+    end,
   },
 }

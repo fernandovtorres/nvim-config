@@ -27,15 +27,16 @@ return {
     mason_lspconfig.setup({
       -- list of servers for mason to install
       ensure_installed = {
-        "clangd",
-        "ruff",
-        "lua_ls",
-        "pyright",
-        "rust_analyzer",
-        "vhdl_ls",
-        "gopls",
-        "ts_ls",
-        "hls",
+        "clangd", -- c
+        "ruff", -- python
+        "lua_ls", -- lua
+        "pyright", -- python
+        "rust_analyzer", -- rust
+        "vhdl_ls", -- vhdl
+        "gopls", -- go
+        "ts_ls", -- typescript
+        "hls", -- haskell
+        "docker_compose_language_service", -- docker
       },
     })
 
